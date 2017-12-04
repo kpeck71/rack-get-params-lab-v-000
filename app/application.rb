@@ -20,7 +20,7 @@ class Application
         end
       end
     elsif req.path.match(/add/)
-      item = 
+      requested_item = req.params["q"]
       handle_search(item)
       @@items.each do |new_item|
         resp.write "Added #{new_item}\n"
