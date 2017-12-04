@@ -20,11 +20,12 @@ class Application
         end
       end
     elsif req.path.match(/add/)
-      requested_item = req.params["q"]
-      handle_search(requested_item)
-      @@items.each do |new_item|
+      new_item = req.params["q"]
+      handle_search(new_item)
+      if @@items.include?(new_item)
+      
         resp.write "Added #{new_item}\n"
-      end
+      
     elsif req.path.match(/search/)
       search_term = req.params["q"]
       resp.write handle_search(search_term)
