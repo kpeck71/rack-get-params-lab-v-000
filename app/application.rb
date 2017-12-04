@@ -19,6 +19,10 @@ class Application
           resp.write "#{c_item}\n"
         end
       end
+    elsif req.path.match(/add/)
+      @@items.each do |item|
+        resp.write "#{item}\n"
+      end
     elsif req.path.match(/search/)
       search_term = req.params["q"]
       resp.write handle_search(search_term)
