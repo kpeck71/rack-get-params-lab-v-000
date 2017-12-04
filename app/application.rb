@@ -20,7 +20,7 @@ class Application
         end
       end
     elsif req.path.match(/add/)
-      @@items.each do |item|
+      @@items.each do |new_item|
         resp.write "Added #{new_item}\n"
       end
     elsif req.path.match(/search/)
