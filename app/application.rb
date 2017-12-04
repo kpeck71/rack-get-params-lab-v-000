@@ -11,7 +11,7 @@ class Application
       @@items.each do |item|
         resp.write "#{item}\n"
       end
-    if req.path.match(/items/)
+    elsif req.path.match(/items/)
       @@items.each do |item|
         resp.write "#{item}\n"
       end
