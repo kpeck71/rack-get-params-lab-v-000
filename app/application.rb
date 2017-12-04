@@ -12,7 +12,7 @@ class Application
         resp.write "#{item}\n"
       end
     elsif req.path.match(/cart/)
-      @@cart.each do |item|
+      @@cart.each do |c_item|
         resp.write "#{item}\n"
       end
     elsif req.path.match(/search/)
