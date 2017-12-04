@@ -25,7 +25,7 @@ class Application
       if @@items.include?(new_item)
         resp.write "Added #{new_item}\n"
       else
-        resp.write "We don't have that item, #{new_item}"
+        resp.write "We don't have that item, #{new_item}\n"
       end
     elsif req.path.match(/search/)
       search_term = req.params["q"]
